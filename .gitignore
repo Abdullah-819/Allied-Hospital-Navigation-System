@@ -1,0 +1,33 @@
+# Compiled binaries
+bin/
+*.exe
+*.out
+*.o
+*.obj
+*.env
+*.readme
+
+# Build folders
+build/
+Debug/
+Release/
+.env/
+script/
+private/
+
+# IDE / Editor files
+.vscode/
+*.code-workspace
+*.user
+*.suo
+*.vcxproj*
+*.ncb
+*.sdf
+*.opendb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
