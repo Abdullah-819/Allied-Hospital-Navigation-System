@@ -4,23 +4,21 @@
 #include <string>
 #include <vector>
 
-// Room struct
 struct Room {
     int id;
     std::string name;
-    int x, y; // optional for map coordinates
+    int x, y; 
 };
 
-// Hospital class
 class Hospital {
 private:
     std::vector<Room> rooms;
 
 public:
-    Hospital(); // Constructor to initialize rooms
+    Hospital(); 
 
-    void displayRooms();   // Print room menu
-    void displayMap();     // Print ASCII hospital map
+    void displayRooms();   
+    void displayMap();     
     int getRoomCount();
     Room getRoomById(int id);
 };

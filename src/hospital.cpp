@@ -2,19 +2,17 @@
 #include <iostream>
 
 #ifdef _WIN32
-#include <windows.h> // For colored console text on Windows
+#include <windows.h>
 #else
 #include <unistd.h>
 #endif
 
-// ANSI color codes for cross-platform
 #define RESET   "\033[0m"
 #define RED     "\033[1;31m"
 #define GREEN   "\033[1;32m"
 #define YELLOW  "\033[1;33m"
 #define BLUE    "\033[1;34m"
 
-// Constructor: initialize rooms
 Hospital::Hospital() {
     rooms.push_back({1, "Emergency", 0, 0});
     rooms.push_back({2, "Radiology", 0, 1});
@@ -22,7 +20,6 @@ Hospital::Hospital() {
     rooms.push_back({4, "ICU", 1, 1});
 }
 
-// Display room menu
 void Hospital::displayRooms() {
     std::cout << BLUE << "Rooms:\n" << RESET;
     for (const auto& room : rooms) {
@@ -30,7 +27,6 @@ void Hospital::displayRooms() {
     }
 }
 
-// Display ASCII map
 void Hospital::displayMap() {
     std::cout << GREEN << "\nASCII Hospital Map:\n" << RESET;
     std::cout << "[" << RED << "1" << RESET << "]---[" << BLUE << "2" << RESET << "]\n";
@@ -38,12 +34,10 @@ void Hospital::displayMap() {
     std::cout << "[" << YELLOW << "3" << RESET << "]---[" << GREEN << "4" << RESET << "]\n";
 }
 
-// Get number of rooms
 int Hospital::getRoomCount() {
     return rooms.size();
 }
 
-// Get room by ID
 Room Hospital::getRoomById(int id) {
     for (auto& room : rooms) {
         if (room.id == id) return room;

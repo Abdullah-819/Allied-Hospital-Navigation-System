@@ -6,16 +6,21 @@
 #include <unordered_map>
 #include "hospital.hpp"
 
+struct Edge {
+    int to;
+    double distance; // in meters
+};
+
 class Navigation {
 private:
     int roomCount;
-    std::vector<std::vector<int>> adjList; // adjacency list for rooms
+    std::vector<std::vector<Edge>> adjList; // weighted adjacency list
 
 public:
     Navigation(int totalRooms); // constructor
 
-    void addConnection(int room1, int room2); // add edge between rooms
-    std::vector<int> findShortestPath(int startId, int endId); // BFS shortest path
+    void addConnection(int room1, int room2, double distance); // weighted edge
+    std::vector<int> findShortestPath(int startId, int endId, double &totalDistance); // Dijkstra
 };
 
 #endif
